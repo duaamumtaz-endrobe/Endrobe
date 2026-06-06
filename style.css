@@ -1,5 +1,13 @@
 /* Base Layout */
 body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; margin: 0; padding: 0; color: #333; background-color: #fff9fb; }
+body {
+    /* Referencing 1000412574.png within an images sub-folder */
+    background-image: url('images/1000412574.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
 
 /* Header and Nav */
 header { background: #ffb6c1; padding: 2rem; text-align: center; border-bottom: 3px solid #e6e6fa; }
