@@ -1,69 +1,54 @@
 <style>
-    /* Endrobe Theme Styling */
-    body { background-color: #0A192F; color: #E6F1FF; font-family: 'Segoe UI', sans-serif; }
-    h2, h3 { color: #FFD700; }
-    .subject-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; padding: 20px; }
-    
-    select { 
-        background-color: #112240; 
-        color: #E6F1FF; 
-        border: 1px solid #FFD700; 
-        padding: 10px;
-        border-radius: 5px;
+    /* Define Endrobe Palette */
+    :root {
+        --pink: #ffb6c1;
+        --sky-blue: #87ceeb;
+        --yellow: #fff44f;
+        --lavender: #e6e6fa;
+        --light-orange: #ffdab9;
+        --light-gray: #f0f0f0;
+        --text-dark: #4a4a4a;
     }
-    
-    .requirement-text { color: #8892B0; font-style: italic; }
+
+    /* Base Layout with Blueprint Background */
+    body { 
+        background-image: url('images/1000412574.png');
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        font-family: 'Segoe UI', sans-serif;
+    }
+
+    /* Section Wrapper with Light Overlay */
+    section { 
+        background-color: rgba(255, 255, 255, 0.85); 
+        border: 2px solid var(--lavender); 
+        border-radius: 15px; 
+        padding: 30px; 
+        margin: 20px auto; 
+        max-width: 900px;
+    }
+
+    h2, h3 { color: #9370db; /* Lavender */ }
+
+    select { 
+        background-color: var(--light-gray); 
+        color: var(--text-dark); 
+        border: 2px solid var(--pink); 
+        padding: 10px;
+        border-radius: 8px;
+    }
+
+    .requirement-text { 
+        background-color: var(--yellow); 
+        border-left: 4px solid var(--pink); 
+        padding: 10px; 
+        font-style: italic; 
+        color: var(--text-dark);
+    }
+
+    /* Apply colors to options/groups for better visibility */
+    optgroup { color: #9370db; font-weight: bold; }
+    option { background: #fff; color: var(--text-dark); }
 </style>
-
-<section>
-    <h2>Academic Catalog</h2>
-    <p class="requirement-text">Requirement: Please select at least 5 subjects to satisfy your core certification track.</p>
-
-    <div class="subject-grid">
-        <!-- Major/Minor Groups -->
-        <div>
-            <h3>Major Foundations</h3>
-            <select name="majors" multiple style="width: 100%; height: 200px;">
-                <optgroup label="Physical & Life Sciences">
-                    <option value="phys">Physics: Classical, Quantum, Thermodynamics</option>
-                    <option value="chem">Chemistry: Organic, Analytical, Biochemistry</option>
-                    <option value="bio">Biology: Genetics, Physiology, Neurobiology</option>
-                </optgroup>
-                <optgroup label="Quantitative Logic">
-                    <option value="math">Mathematics: Calculus, Linear Algebra, Statistics</option>
-                    <option value="cs">Computer Science: Data Structures, Algorithms, AI</option>
-                </optgroup>
-            </select>
-        </div>
-
-        <div>
-            <h3>Elective Streams</h3>
-            <select name="electives" multiple style="width: 100%; height: 200px;">
-                <optgroup label="Business & Commerce">
-                    <option value="acc">Accounting: Financial, Managerial, Auditing</option>
-                    <option value="econ">Economics: Micro, Macro, Behavioral</option>
-                    <option value="mkt">Marketing: Digital, Brand Strategy, Consumer Behavior</option>
-                </optgroup>
-                <optgroup label="Creative Arts">
-                    <option value="art">Design: Visual, UI/UX, Calligraphy</option>
-                    <option value="lit">Literature: World, Classical, Modern</option>
-                </optgroup>
-            </select>
-        </div>
-
-        <div>
-            <h3>Specialized Minor Tracks</h3>
-            <select name="minors" multiple style="width: 100%; height: 200px;">
-                <optgroup label="Global & Social">
-                    <option value="ir">International Relations & Diplomacy</option>
-                    <option value="phil">Philosophy: Ethics, Epistemology</option>
-                    <option value="ling">Linguistics: Phonetics, Syntax, Semantics</option>
-                </optgroup>
-                <optgroup label="Emerging Tech">
-                    <option value="cyber">Cybersecurity & Network Defense</option>
-                    <option value="env">Environmental Science & Sustainability</option>
-                </optgroup>
-            </select>
-        </div>
-    </div>
-</section>
