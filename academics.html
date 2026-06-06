@@ -1,77 +1,43 @@
-<style>
-    /* Define Endrobe Palette */
-    :root {
-        --pink: #ffb6c1;
-        --sky-blue: #87ceeb;
-        --yellow: #fff44f;
-        --lavender: #e6e6fa;
-        --light-orange: #ffdab9;
-        --light-gray: #f0f0f0;
-        --text-dark: #4a4a4a;
-        --dreamy-pink: #ff85a2;
-    }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Tracks | Endrobe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-    /* Clean, Soft Aesthetic Background */
-    body { 
-        background-color: #fff9fb; 
-        background-image: linear-gradient(135deg, #fff9fb 0%, #fdf4f7 100%);
-        background-attachment: fixed;
-        font-family: 'Segoe UI', sans-serif;
-        color: var(--text-dark);
-        margin: 0;
-        padding: 20px;
-    }
+    <section>
+        <h2>Your Academic Track</h2>
+        <p>Select your specialized learning path to begin your certification journey.</p>
 
-    /* Section Wrapper with Light Overlay */
-    section { 
-        background-color: rgba(255, 255, 255, 0.9); 
-        border: 2px solid var(--lavender); 
-        border-radius: 20px; 
-        padding: 30px; 
-        margin: 20px auto; 
-        max-width: 900px;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    }
+        <form action="dashboard.html" method="GET">
+            <div style="margin-bottom: 20px;">
+                <label>Choose Your Focus</label><br>
+                <select name="academic_track">
+                    <optgroup label="Sciences">
+                        <option value="med">Medical & Healthcare</option>
+                        <option value="chem">Chemistry & Lab Research</option>
+                    </optgroup>
+                    <optgroup label="Creative & Tech">
+                        <option value="calligraphy">Classical Calligraphy</option>
+                        <option value="soft">Software Development</option>
+                    </optgroup>
+                </select>
+            </div>
 
-    h2, h3 { color: #9370db; }
+            <p class="requirement-text">
+                Note: Ensure you have your project materials ready for your chosen track.
+            </p>
 
-    /* Consistent Button Styling */
-    .enroll-btn {
-        display: block;
-        width: 200px;
-        margin: 20px auto;
-        padding: 15px;
-        background-color: var(--dreamy-pink);
-        color: white;
-        text-align: center;
-        text-decoration: none;
-        border-radius: 50px;
-        font-weight: bold;
-        border: none;
-        cursor: pointer;
-        transition: transform 0.2s;
-    }
+            <button type="submit" class="enroll-btn">Select Track</button>
+        </form>
 
-    .enroll-btn:hover { transform: scale(1.05); }
+        <p style="text-align: center; margin-top: 20px;">
+            <a href="dashboard.html" style="color: #9370db; font-weight: bold;">Back to Dashboard</a>
+        </p>
+    </section>
 
-    /* Inputs and Selects */
-    input, select { 
-        width: 100%;
-        padding: 12px;
-        margin: 8px 0;
-        background-color: var(--light-gray); 
-        color: var(--text-dark); 
-        border: 2px solid var(--pink); 
-        border-radius: 8px;
-        box-sizing: border-box;
-    }
-
-    .requirement-text { 
-        background-color: var(--yellow); 
-        border-left: 4px solid var(--pink); 
-        padding: 10px; 
-        font-style: italic; 
-        color: var(--text-dark);
-        margin: 15px 0;
-    }
-</style>
+</body>
+</html>
