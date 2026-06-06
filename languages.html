@@ -1,0 +1,48 @@
+<section>
+    <h3>Select Your Language Track</h3>
+    
+    <!-- Added professional requirement text -->
+    <p style="font-size: 0.9em; color: #555; margin-bottom: 10px;">
+        <em>Note: To fulfill your core curriculum, a minimum of one language track is required.</em>
+    </p>
+
+    <label for="language-select">Choose your primary language of study:</label>
+    <select id="language-select" name="language" style="width: 100%; padding: 10px; margin-top: 5px;">
+        <option value="">Loading languages...</option>
+    </select>
+</section>
+
+<script>
+    const languages = [
+        "Afrikaans", "Albanian", "Amharic", "Arabic", "Armenian", "Azerbaijani", 
+        "Belarusian", "Bengali", "Bosnian", "Bulgarian", "Burmese", "Cantonese", 
+        "Croatian", "Czech", "Danish", "Dari", "Dhivehi", "Dutch", "Dzongkha", 
+        "English", "Estonian", "Filipino", "Finnish", "French", "Georgian", 
+        "German", "Greek", "Guaraní", "Haitian Creole", "Hausa", "Hebrew", 
+        "Hindi", "Hungarian", "Icelandic", "Igbo", "Indonesian", "Italian", 
+        "Japanese", "Kazakh", "Kinyarwanda", "Korean", "Kyrgyz", "Lao", 
+        "Latvian", "Lingala", "Lithuanian", "Luxembourgish", "Macedonian", 
+        "Malagasy", "Malay", "Maltese", "Mandarin Chinese", "Marathi", 
+        "Mongolian", "Montenegrin", "Nepali", "Norwegian", "Pashto", "Persian (Farsi)", 
+        "Polish", "Portuguese", "Punjabi", "Quechua", "Romanian", "Russian", 
+        "Serbian", "Sesotho", "Sindhi", "Sinhala", "Slovak", "Slovene", 
+        "Somali", "Spanish", "Swahili", "Swedish", "Tagalog", "Tamil", 
+        "Telugu", "Tetum", "Thai", "Tigrinya", "Tswana", "Turkish", 
+        "Turkmen", "Ukrainian", "Urdu", "Uzbek", "Vietnamese", "Yoruba"
+    ];
+
+    const select = document.getElementById('language-select');
+    
+    // Clear existing options
+    select.innerHTML = '<option value="">Search or select a language...</option>';
+
+    // Populate the dropdown alphabetically
+    languages.sort().forEach(lang => {
+        let option = document.createElement('option');
+        option.value = lang.toLowerCase().replace(/\s+/g, '-');
+        option.textContent = lang;
+        select.appendChild(option);
+    });
+</script>
+
+
