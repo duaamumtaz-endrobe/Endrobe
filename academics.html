@@ -1,36 +1,69 @@
+<style>
+    /* Endrobe Theme Styling */
+    body { background-color: #0A192F; color: #E6F1FF; font-family: 'Segoe UI', sans-serif; }
+    h2, h3 { color: #FFD700; }
+    .subject-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; padding: 20px; }
+    
+    select { 
+        background-color: #112240; 
+        color: #E6F1FF; 
+        border: 1px solid #FFD700; 
+        padding: 10px;
+        border-radius: 5px;
+    }
+    
+    .requirement-text { color: #8892B0; font-style: italic; }
+</style>
+
 <section>
     <h2>Academic Catalog</h2>
-    <p><em>Requirement: Select a total of 5 subjects from the tracks below to complete your core certification requirements.</em></p>
+    <p class="requirement-text">Requirement: Please select at least 5 subjects to satisfy your core certification track.</p>
 
     <div class="subject-grid">
-        <!-- Major/Core Subjects -->
+        <!-- Major/Minor Groups -->
         <div>
-            <h3>Core Major Subjects</h3>
-            <ul>
-                <li><strong>Sciences:</strong> Advanced Physics, Organic & Inorganic Chemistry, Molecular Biology, Anatomy & Physiology</li>
-                <li><strong>Mathematics:</strong> Calculus (AB/BC), Linear Algebra, Discrete Mathematics, Statistics, Trigonometry</li>
-                <li><strong>Humanities/Social:</strong> Global History, Macroeconomics, Microeconomics, Philosophy, Political Science</li>
-            </ul>
+            <h3>Major Foundations</h3>
+            <select name="majors" multiple style="width: 100%; height: 200px;">
+                <optgroup label="Physical & Life Sciences">
+                    <option value="phys">Physics: Classical, Quantum, Thermodynamics</option>
+                    <option value="chem">Chemistry: Organic, Analytical, Biochemistry</option>
+                    <option value="bio">Biology: Genetics, Physiology, Neurobiology</option>
+                </optgroup>
+                <optgroup label="Quantitative Logic">
+                    <option value="math">Mathematics: Calculus, Linear Algebra, Statistics</option>
+                    <option value="cs">Computer Science: Data Structures, Algorithms, AI</option>
+                </optgroup>
+            </select>
         </div>
 
-        <!-- Elective Streams -->
         <div>
             <h3>Elective Streams</h3>
-            <ul>
-                <li><strong>Business:</strong> Financial Accounting, Marketing Principles, Entrepreneurship, Business Law, Management</li>
-                <li><strong>Technology:</strong> Computer Science (AP), Web Development, Data Structures & Algorithms, Systems Architecture</li>
-                <li><strong>Arts/Physical:</strong> Visual Arts, Music Theory, Physical Education, Theater Arts, Public Speaking</li>
-            </ul>
+            <select name="electives" multiple style="width: 100%; height: 200px;">
+                <optgroup label="Business & Commerce">
+                    <option value="acc">Accounting: Financial, Managerial, Auditing</option>
+                    <option value="econ">Economics: Micro, Macro, Behavioral</option>
+                    <option value="mkt">Marketing: Digital, Brand Strategy, Consumer Behavior</option>
+                </optgroup>
+                <optgroup label="Creative Arts">
+                    <option value="art">Design: Visual, UI/UX, Calligraphy</option>
+                    <option value="lit">Literature: World, Classical, Modern</option>
+                </optgroup>
+            </select>
         </div>
 
-        <!-- Specialized/Minor Tracks -->
         <div>
             <h3>Specialized Minor Tracks</h3>
-            <ul>
-                <li><strong>Interdisciplinary:</strong> Environmental Management, Marine Science, Behavioral Psychology, Anthropology</li>
-                <li><strong>Emerging Tech:</strong> Artificial Intelligence Basics, Data Analytics, Cybersecurity, Robotics</li>
-                <li><strong>Global Perspectives:</strong> International Relations, Linguistics, Gender Studies, Development Studies</li>
-            </ul>
+            <select name="minors" multiple style="width: 100%; height: 200px;">
+                <optgroup label="Global & Social">
+                    <option value="ir">International Relations & Diplomacy</option>
+                    <option value="phil">Philosophy: Ethics, Epistemology</option>
+                    <option value="ling">Linguistics: Phonetics, Syntax, Semantics</option>
+                </optgroup>
+                <optgroup label="Emerging Tech">
+                    <option value="cyber">Cybersecurity & Network Defense</option>
+                    <option value="env">Environmental Science & Sustainability</option>
+                </optgroup>
+            </select>
         </div>
     </div>
 </section>
