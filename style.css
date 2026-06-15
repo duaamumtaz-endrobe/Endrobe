@@ -1,43 +1,33 @@
-:root {
-    --pink: #ffb6c1;
-    --soft-lavender: #e6e6fa;
-    --dreamy-pink: #ff85a2; /* Brighter pink for buttons */
-    --light-gray: #fdfdfd;
-    --text-color: #5a5a5a;
-}
-
-/* Girly Rounded Buttons */
-.enroll-btn {
+/* Logo Styling */
+.corner-logo {
+    width: 80px;      /* Keeps the logo small and clean */
+    height: auto;
     display: block;
-    width: 200px;
-    margin: 30px auto;
-    padding: 15px;
-    background-color: var(--dreamy-pink);
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 50px; /* Fully rounded/pill shape */
-    font-weight: bold;
-    box-shadow: 0 4px 10px rgba(255, 133, 162, 0.3);
-    transition: transform 0.2s;
 }
 
-.enroll-btn:hover { transform: scale(1.05); }
-
-/* Donation Section */
-.donation-box {
-    background: var(--soft-lavender);
-    padding: 20px;
-    border-radius: 20px;
-    text-align: center;
-    margin-top: 40px;
-    border: 2px dashed var(--pink);
+.logo-link {
+    position: absolute; /* Pins the logo to the corner of the header */
+    top: 20px;
+    left: 20px;
+    z-index: 1000;      /* Ensures it stays on top of all other elements */
+    transition: transform 0.3s ease;
 }
 
-section { 
-    background-color: var(--light-gray);
-    border-radius: 30px; /* Softer, rounder corners */
-    padding: 40px;
-    margin: 20px;
-    border: 1px solid var(--pink);
+.logo-link:hover {
+    transform: scale(1.05); /* Adds a subtle hover effect */
+}
+
+/* Header Adjustments */
+header {
+    position: relative; /* Essential: Allows the absolute logo to pin to this header */
+    padding: 60px 20px 20px 20px; /* Extra top padding prevents the title from hitting the logo */
+    text-align: center;
+}
+
+/* Body Styling for overall consistency */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-color);
+    background-color: #fafafa;
+    line-height: 1.6;
 }
