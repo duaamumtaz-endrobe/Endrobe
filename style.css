@@ -6,46 +6,52 @@
 body {
     background-color: var(--pink);
     margin: 0;
-    padding: 0 20px; /* Forces text to stay in the middle, away from edges */
+    padding: 20px; /* Safe space on all sides */
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Keeps everything centered */
 }
 
 /* 1. LAYER: THE DOODLES */
 .doodle {
-    position: absolute;
+    position: absolute; /* Allows them to sit in margins */
     width: 45px;
     z-index: 1;
     pointer-events: none;
 }
 
-/* 2. LAYER: TEXT CONTENT (No white background) */
-header, section {
-    background-color: transparent; /* Removes white box */
-    border: none;
-    margin: 20px 0;
-    padding: 10px;
-    color: #333;
+/* 2. LAYER: LOGO (Back to small) */
+.logo-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
 }
 
-/* 3. LAYER: THE DONATION BOX (Keep the white box) */
+.center-logo {
+    width: 150px; /* Smaller size */
+    height: auto;
+}
+
+/* 3. LAYER: CONTENT (No white background) */
+header, section {
+    width: 90%;
+    max-width: 600px;
+    background-color: transparent;
+    margin: 10px 0;
+    text-align: center;
+}
+
+/* 4. DONATION BOX (The only white box) */
 .donation-box {
+    width: 90%;
+    max-width: 500px;
     background-color: #fdfdfd;
     border-radius: 20px;
     padding: 20px;
     margin: 20px 0;
-    border: 1px solid var(--dreamy-pink);
-}
-
-/* Keep the button as is */
-.enroll-btn {
-    display: block;
-    width: 150px;
-    margin: 20px auto;
-    padding: 10px;
-    background-color: var(--dreamy-pink);
-    color: white;
     text-align: center;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: bold;
+    border: 1px solid var(--dreamy-pink);
+    z-index: 10;
 }
