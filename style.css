@@ -10,23 +10,23 @@ body {
     padding: 0;
     position: relative;
     min-height: 100vh;
-    overflow-x: hidden; /* Prevents horizontal scroll */
+    overflow-x: hidden;
 }
 
-/* 1. LAYER: THE DOODLE STICKERS */
-/* Set higher z-index to stay ABOVE white boxes */
+/* 1. LAYER: THE DOODLES (Pink Side) */
+/* Setting z-index: 1 and position: fixed keeps them on the background layer */
 .doodle {
-    position: absolute;
+    position: fixed;
     width: 45px;
-    z-index: 100;
-    pointer-events: none; /* Let clicks pass through to links */
+    z-index: 1;
+    pointer-events: none;
 }
 
-/* 2. LAYER: THE CONTENT (White Boxes) */
-/* Set lower z-index to stay BEHIND stickers */
-.logo-wrapper, section, .enroll-btn, .donation-box {
+/* 2. LAYER: THE CONTENT (White Side) */
+/* Setting z-index: 10 forces the content boxes to sit ON TOP of any overlapping doodles */
+header, section, .enroll-btn, .donation-box, .logo-wrapper {
     position: relative;
-    z-index: 50;
+    z-index: 10;
     background-color: var(--light-gray);
     margin: 20px;
     padding: 20px;
@@ -34,44 +34,49 @@ body {
     border: 1px solid #ddd;
 }
 
-/* Specific Logo Adjustment */
-.logo-wrapper {
-    display: flex;
-    justify-content: center;
-    padding: 20px 0;
-}
+/* Logo & Button Styling */
+.logo-wrapper { display: flex; justify-content: center; padding: 20px 0; }
+.center-logo { width: 180px; height: auto; }
 
-.center-logo {
-    width: 180px;
-    height: auto;
+.enroll-btn {
+    display: block;
+    width: 150px;
+    margin: 0 auto 20px auto;
+    padding: 10px;
+    background-color: var(--dreamy-pink);
+    color: white;
+    text-align: center;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
 }
 
 /* 3. SCATTERED POSITIONS */
-/* These are now pinned to the body/pink side */
-.d1 { top: 20px; left: 5%; }
-.d2 { top: 20px; right: 5%; }
-.d3 { top: 180px; left: 10%; }
-.d4 { top: 180px; right: 10%; }
-.d5 { top: 350px; left: 2%; }
-.d6 { top: 350px; right: 2%; }
-.d7 { top: 550px; left: 5%; }
-.d8 { top: 550px; right: 5%; }
-.d9 { top: 750px; left: 1%; }
-.d10 { top: 750px; right: 1%; }
-.d11 { top: 950px; left: 12%; }
-.d12 { top: 950px; right: 12%; }
-.d13 { top: 1150px; left: 4%; }
-.d14 { top: 1150px; right: 4%; }
-.d15 { top: 1350px; left: 0%; }
-.d16 { top: 1350px; right: 0%; }
-.d17 { top: 1550px; left: 15%; }
-.d18 { top: 1550px; right: 15%; }
-.d19 { top: 1750px; left: 3%; }
-.d20 { top: 1750px; right: 3%; }
-.d21 { top: 1950px; left: 1%; }
-.d22 { top: 1950px; right: 1%; }
-.d23 { top: 2150px; left: 10%; }
-.d24 { top: 2150px; right: 10%; }
-.d25 { top: 2350px; left: 5%; }
-.d26 { top: 2350px; right: 5%; }
-.d27 { top: 2550px; left: 10%; }
+/* We use top/left percentages so they stay in the pink margins */
+.d1 { top: 5%; left: 5%; }
+.d2 { top: 5%; right: 5%; }
+.d3 { top: 15%; left: 2%; }
+.d4 { top: 15%; right: 2%; }
+.d5 { top: 25%; left: 8%; }
+.d6 { top: 25%; right: 8%; }
+.d7 { top: 35%; left: 3%; }
+.d8 { top: 35%; right: 3%; }
+.d9 { top: 45%; left: 6%; }
+.d10 { top: 45%; right: 6%; }
+.d11 { top: 55%; left: 2%; }
+.d12 { top: 55%; right: 2%; }
+.d13 { top: 65%; left: 9%; }
+.d14 { top: 65%; right: 9%; }
+.d15 { top: 75%; left: 4%; }
+.d16 { top: 75%; right: 4%; }
+.d17 { top: 85%; left: 1%; }
+.d18 { top: 85%; right: 1%; }
+.d19 { top: 95%; left: 12%; }
+.d20 { top: 95%; right: 12%; }
+.d21 { top: 50px; left: 15%; }
+.d22 { top: 50px; right: 15%; }
+.d23 { top: 150px; left: 5%; }
+.d24 { top: 150px; right: 5%; }
+.d25 { top: 250px; left: 10%; }
+.d26 { top: 250px; right: 10%; }
+.d27 { top: 350px; left: 5%; }
