@@ -2,80 +2,57 @@
     --pink: #ffb6c1;
     --dreamy-pink: #ff85a2;
     --light-gray: #fdfdfd;
-    --text-color: #5a5a5a;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: var(--text-color);
     background-color: var(--pink);
     margin: 0;
-    padding: 0;
     position: relative;
-    /* Ensure the body is high enough to hold your content */
     min-height: 100vh;
 }
 
-/* --- FLOATING DOODLES --- */
 .doodle {
-    position: absolute; /* Pins them to the page */
-    width: 70px;        /* Consistent size */
-    z-index: 100;       /* Floats them IN FRONT of content */
-    pointer-events: none; /* Allows you to click buttons underneath */
+    position: absolute;
+    width: 70px;
+    z-index: 100; /* Always in front */
+    pointer-events: none;
 }
 
-/* --- MANUAL POSITIONING --- */
-/* Pin each doodle exactly where it belongs using top/left/right */
-/* Example placements based on your screenshot: */
+/* --- THE 27 STICKY POSITIONS --- */
+.d1 { top: 20px; left: 5%; }
+.d2 { top: 50px; right: 10%; }
+.d3 { top: 350px; left: -20px; } /* Overlaps left side */
+.d4 { top: 400px; right: -15px; } /* Overlaps right side */
+.d5 { top: 700px; left: 10%; }
+.d6 { top: 850px; right: 5%; }
+.d7 { top: 950px; left: -25px; }
+.d8 { top: 1100px; right: -20px; }
+.d9 { top: 1250px; left: 15%; }
+.d10 { top: 1400px; right: 10%; }
+.d11 { top: 1550px; left: -20px; }
+.d12 { top: 1700px; right: -25px; }
+.d13 { top: 1850px; left: 5%; }
+.d14 { top: 2000px; right: 15%; }
+.d15 { top: 2150px; left: -15px; }
+.d16 { top: 2300px; right: -20px; }
+.d17 { top: 2450px; left: 20%; }
+.d18 { top: 2600px; right: 5%; }
+.d19 { top: 2750px; left: -20px; }
+.d20 { top: 2900px; right: -25px; }
+.d21 { top: 3050px; left: 10%; }
+.d22 { top: 3200px; right: 15%; }
+.d23 { top: 3350px; left: -10px; }
+.d24 { top: 3500px; right: -20px; }
+.d25 { top: 3650px; left: 5%; }
+.d26 { top: 3800px; right: 10%; }
+.d27 { top: 3950px; left: -20px; }
 
-/* Top section area */
-.d1 { top: 20px; left: 10%; }
-.d2 { top: 50px; right: 5%; }
-
-/* Overlapping the white sections (negative values hang off the edge) */
-.d3 { top: 450px; left: -25px; } 
-.d4 { top: 800px; right: -20px; }
-
-/* Continue adding .d5 { ... } through .d27 { ... } */
-
-/* --- CONTENT BOXES --- */
+/* --- CONTENT --- */
 header, section, .enroll-btn, .donation-box {
     position: relative;
-    z-index: 50; /* Content stays BEHIND doodles (50 < 100) */
-    background-color: var(--light-gray);
-    border-radius: 30px;
+    z-index: 50; /* Content sits behind the doodles */
+    background: var(--light-gray);
+    padding: 20px;
     margin: 20px;
-    padding: 30px;
-    border: 1px solid var(--pink);
-}
-
-header { 
-    background-color: var(--light-gray) !important;
-    display: flex; 
-    justify-content: center; 
-    padding: 20px 0;
-}
-
-.center-logo { 
-    width: 200px; 
-    height: auto; 
-    display: block; 
-}
-
-.enroll-btn {
-    display: block; 
-    width: 200px; 
-    margin: 30px auto; 
-    padding: 15px;
-    background-color: var(--dreamy-pink); 
-    color: white; 
-    text-align: center;
-    text-decoration: none; 
-    border-radius: 50px; 
-    font-weight: bold;
-}
-
-.donation-box {
-    text-align: center;
-    border: 2px dashed var(--pink);
+    border-radius: 20px;
 }
