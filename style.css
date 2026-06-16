@@ -30,29 +30,26 @@ body {
 }
 
 /* 3. BUTTON CONTAINER: Centered, smaller, pill-shaped lavender box */
-.enroll-btn-container {
+/* Center the button properly */
+.button-wrapper {
     display: flex;
     justify-content: center;
+    width: 100%;
+    margin: 20px 0;
+}
+
+.enroll-btn-container {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
     background-color: var(--light-gray);
     border-radius: 50px;
     padding: 10px 30px;
-    margin: 20px auto;
-    width: fit-content;
     border: 1px solid #ddd;
 }
 
-.enroll-btn {
-    display: block;
-    margin: 0;
-    padding: 10px 20px;
-    background-color: var(--dreamy-pink);
-    color: white;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: bold;
-}
 
-/* 4. DONATION BOX: White box preserved */
+/* 4. DONATION BOX: Lavender box preserved */
 .donation-box {
     background-color: var(--light-gray);
     border-radius: 20px;
