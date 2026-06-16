@@ -2,63 +2,70 @@
     --pink: #ffb6c1;
     --dreamy-pink: #ff85a2;
     --light-gray: #fdfdfd;
-    --text-color: #5a5a5a;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, sans-serif;
     background-color: var(--pink);
     margin: 0;
-    padding: 0;
-    position: relative; /* Essential for absolute doodle positioning */
+    position: relative;
     min-height: 100vh;
 }
 
-/* 1. COMPACT LOGO - Centers and shrinks the logo */
-.logo-container {
-    display: flex;
-    justify-content: center;
-    padding: 20px 0;
-    background-color: var(--pink);
-}
-
-.center-logo {
-    width: 180px; /* Small, compact size */
-    height: auto;
-}
-
-/* 2. STICKER DOODLES - Absolute pinning */
+/* Base Style */
 .doodle {
     position: absolute;
-    width: 45px;          /* Small sticker size */
-    z-index: 100;         /* Always in front */
-    pointer-events: none; /* Let clicks pass through */
+    width: 45px; 
+    z-index: 100;
+    pointer-events: none;
 }
 
-/* MANUAL POSITIONS - Place your 27 doodles here */
-/* Adjust these numbers to match your screenshot layout exactly */
-.d1 { top: 20px; left: 10px; }
-.d2 { top: 20px; right: 10px; }
-.d3 { top: 120px; left: 5px; }
-.d4 { top: 120px; right: 5px; }
-.d5 { top: 300px; left: -5px; }   /* Overlapping edge */
-.d6 { top: 300px; right: -5px; }  /* Overlapping edge */
-/* Add .d7 through .d27 with unique top/left/right values */
+/* POSITIONS: Tweak these percentages/pixels to match your desired layout */
+.d1 { top: 20px; left: 5%; }
+.d2 { top: 20px; right: 5%; }
+.d3 { top: 150px; left: 10%; }
+.d4 { top: 150px; right: 10%; }
+.d5 { top: 300px; left: -10px; }
+.d6 { top: 300px; right: -10px; }
+.d7 { top: 450px; left: 5%; }
+.d8 { top: 450px; right: 5%; }
+.d9 { top: 600px; left: -15px; }
+.d10 { top: 600px; right: -15px; }
+.d11 { top: 750px; left: 15%; }
+.d12 { top: 750px; right: 15%; }
+.d13 { top: 900px; left: 5%; }
+.d14 { top: 900px; right: 5%; }
+.d15 { top: 1050px; left: -10px; }
+.d16 { top: 1050px; right: -10px; }
+.d17 { top: 1200px; left: 20%; }
+.d18 { top: 1200px; right: 20%; }
+.d19 { top: 1350px; left: 5%; }
+.d20 { top: 1350px; right: 5%; }
+.d21 { top: 1500px; left: -5px; }
+.d22 { top: 1500px; right: -5px; }
+.d23 { top: 1650px; left: 15%; }
+.d24 { top: 1650px; right: 15%; }
+.d25 { top: 1800px; left: 10%; }
+.d26 { top: 1800px; right: 10%; }
+.d27 { top: 1950px; left: 5%; }
 
-/* 3. CONTENT BOXES - Clean and unified */
+/* Centered Logo & Content */
+.logo-wrapper { display: flex; justify-content: center; padding: 20px 0; }
+.center-logo { width: 180px; height: auto; }
+
 header, section, .enroll-btn, .donation-box {
     position: relative;
-    z-index: 50; 
+    z-index: 50;
     background-color: var(--light-gray);
-    margin: 15px;      /* Tight margins */
+    margin: 20px;
     padding: 20px;
     border-radius: 20px;
+    border: 1px solid var(--pink);
 }
 
 .enroll-btn {
     display: block;
     width: 150px;
-    margin: 0 auto 15px auto;
+    margin: 0 auto 20px auto;
     padding: 10px;
     background-color: var(--dreamy-pink);
     color: white;
@@ -66,8 +73,4 @@ header, section, .enroll-btn, .donation-box {
     border-radius: 50px;
     text-decoration: none;
     font-weight: bold;
-}
-
-section {
-    border: 1px solid var(--pink);
 }
