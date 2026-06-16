@@ -8,101 +8,67 @@ body {
     background-color: var(--pink);
     margin: 0;
     padding: 0;
-    position: relative;
     min-height: 100vh;
+    position: relative;
     overflow-x: hidden;
 }
 
-/* 1. LAYER: THE DOODLES (Pink Side) */
-/* Setting z-index: 1 and position: fixed keeps them on the background layer */
+/* 1. DOODLES: Pinned to background layer, strictly in margins */
 .doodle {
-    position: fixed;
+    position: absolute;
     width: 45px;
-    z-index: 1;
+    z-index: -1; 
     pointer-events: none;
 }
 
-/* 2. LAYER: THE CONTENT (White Side) */
-/* Setting z-index: 10 forces the content boxes to sit ON TOP of any overlapping doodles */
-header, section, .enroll-btn, .donation-box, .logo-wrapper {
-    position: relative;
-    z-index: 10;
-    background-color: var(--light-gray);
-    margin: 20px;
+/* 2. LOGO & STORY: Transparent (No white box) */
+.logo-wrapper, section {
+    background-color: transparent !important;
+    border: none !important;
     padding: 20px;
+    text-align: center;
+}
+
+/* 3. DONATION BOX: White boxes preserved */
+.donation-box {
+    background-color: var(--light-gray);
     border-radius: 20px;
-    border: 1px solid #ddd;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 500px;
+    text-align: center;
 }
 
 /* Logo & Button Styling */
-.logo-wrapper { display: flex; justify-content: center; padding: 20px 0; }
 .center-logo { width: 180px; height: auto; }
-
 .enroll-btn {
-    display: block;
-    width: 150px;
-    margin: 0 auto 20px auto;
-    padding: 10px;
+    display: inline-block;
+    padding: 10px 20px;
     background-color: var(--dreamy-pink);
     color: white;
-    text-align: center;
     border-radius: 50px;
     text-decoration: none;
     font-weight: bold;
 }
 
-/* 3. SCATTERED POSITIONS */
-/* We use top/left percentages so they stay in the pink margins */
-.d1 { top: 5%; left: 5%; }
-.d2 { top: 5%; right: 5%; }
-.d3 { top: 15%; left: 2%; }
-.d4 { top: 15%; right: 2%; }
-.d5 { top: 25%; left: 8%; }
-.d6 { top: 25%; right: 8%; }
-.d7 { top: 35%; left: 3%; }
-.d8 { top: 35%; right: 3%; }
-.d9 { top: 45%; left: 6%; }
-.d10 { top: 45%; right: 6%; }
-.d11 { top: 55%; left: 2%; }
-.d12 { top: 55%; right: 2%; }
-.d13 { top: 65%; left: 9%; }
-.d14 { top: 65%; right: 9%; }
-.d15 { top: 75%; left: 4%; }
-.d16 { top: 75%; right: 4%; }
-.d17 { top: 85%; left: 1%; }
-.d18 { top: 85%; right: 1%; }
-.d19 { top: 95%; left: 12%; }
-.d20 { top: 95%; right: 12%; }
-.d21 { top: 50px; left: 15%; }
-.d22 { top: 50px; right: 15%; }
-.d23 { top: 150px; left: 5%; }
-.d24 { top: 150px; right: 5%; }
-.d25 { top: 250px; left: 10%; }
-.d26 { top: 250px; right: 10%; }
-.d27 { top: 350px; left: 5%; }
+/* 4. SCATTERED COORDINATES: Kept in side margins only */
+/* Left side */
+.d1, .d3, .d5, .d7, .d9, .d11, .d13, .d15, .d17, .d19, .d21, .d23, .d25, .d27 { left: 2%; }
+/* Right side */
+.d2, .d4, .d6, .d8, .d10, .d12, .d14, .d16, .d18, .d20, .d22, .d24, .d26 { right: 2%; }
 
-/* 1. Reset: Remove white boxes from Logo and Story Section */
-.logo-wrapper, section {
-    background-color: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
-    padding: 20px;
-}
-
-/* 2. Keep these in white boxes as requested */
-.enroll-btn-container, .donation-box {
-    background-color: #fdfdfd;
-    border-radius: 20px;
-    padding: 20px;
-    margin: 20px auto;
-    max-width: 500px;
-}
-
-/* 3. Ensure stickers NEVER overlap text */
-.doodle {
-    position: absolute;
-    z-index: -1; /* Pushes stickers behind everything */
-    width: 45px;
-    pointer-events: none;
-}
-
+/* Vertical distribution */
+.d1, .d2 { top: 50px; }
+.d3, .d4 { top: 250px; }
+.d5, .d6 { top: 450px; }
+.d7, .d8 { top: 650px; }
+.d9, .d10 { top: 850px; }
+.d11, .d12 { top: 1050px; }
+.d13, .d14 { top: 1250px; }
+.d15, .d16 { top: 1450px; }
+.d17, .d18 { top: 1650px; }
+.d19, .d20 { top: 1850px; }
+.d21, .d22 { top: 2050px; }
+.d23, .d24 { top: 2250px; }
+.d25, .d26 { top: 2450px; }
+.d27 { top: 2650px; left: 45%; }
