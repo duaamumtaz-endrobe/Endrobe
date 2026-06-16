@@ -7,34 +7,57 @@
 }
 
 body {
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-color);
     background-color: var(--pink);
-    margin: 0; padding: 0;
+    margin: 0;
+    padding: 0;
     position: relative;
+    /* Ensure the body is large enough to contain the doodles */
+    min-height: 100vh;
 }
 
-/* --- DOODLES --- */
+/* --- DOODLE STYLING --- */
 .doodle {
-    position: absolute;
-    width: 80px; /* Size from your screenshot */
-    z-index: 100; /* Puts them in front of everything */
-    pointer-events: none; /* Allows clicking buttons underneath */
+    position: absolute; /* Allows manual placement anywhere on page */
+    width: 60px;        /* Matches the size in your screenshot */
+    z-index: 0;         /* Keeps them behind content */
+    pointer-events: none;
 }
 
-/* --- Pin them exactly where you want them --- */
-.d1 { top: 20px; left: 30px; }       /* Top Left */
-.d2 { top: 30px; right: 40px; }      /* Top Right */
-.d3 { top: 400px; left: -20px; }     /* Left overlap of Section */
-.d4 { top: 500px; right: -20px; }    /* Right overlap of Section */
-/* Repeat for all 27 doodles with unique top/left/right coordinates */
+/* --- MANUAL POSITIONING (Pin your 27 doodles here) --- */
+/* Example: Move these around until they match your screenshot */
+.d1 { top: 20px; left: 5%; }
+.d2 { top: 100px; right: 10%; }
+.d3 { top: 350px; left: 2%; }
+/* Add .d4 through .d27 here with unique top/left/right values */
 
 /* --- MAIN CONTENT --- */
-header, section, .enroll-btn, .donation-box {
+/* These stay in the "foreground" relative to the doodles */
+header, .enroll-btn, section, .donation-box {
     position: relative;
-    z-index: 50; /* Content stays behind the doodles */
+    z-index: 10;
     background-color: var(--light-gray);
+    border-radius: 20px;
     margin: 20px;
     padding: 20px;
-    border-radius: 20px;
 }
-header { background-color: var(--pink) !important; }
+
+header { 
+    background-color: var(--light-gray) !important;
+    display: flex; 
+    justify-content: center; 
+}
+
+.center-logo { width: 150px; height: auto; }
+
+.enroll-btn {
+    display: block; 
+    width: 200px; 
+    margin: 30px auto; 
+    text-align: center;
+    background-color: var(--dreamy-pink); 
+    color: white; 
+    text-decoration: none; 
+    font-weight: bold;
+}
