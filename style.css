@@ -80,3 +80,29 @@ header, section, .enroll-btn, .donation-box, .logo-wrapper {
 .d25 { top: 250px; left: 10%; }
 .d26 { top: 250px; right: 10%; }
 .d27 { top: 350px; left: 5%; }
+
+/* 1. Reset: Remove white boxes from Logo and Story Section */
+.logo-wrapper, section {
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 20px;
+}
+
+/* 2. Keep these in white boxes as requested */
+.enroll-btn-container, .donation-box {
+    background-color: #fdfdfd;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 500px;
+}
+
+/* 3. Ensure stickers NEVER overlap text */
+.doodle {
+    position: absolute;
+    z-index: -1; /* Pushes stickers behind everything */
+    width: 45px;
+    pointer-events: none;
+}
+
