@@ -28,6 +28,24 @@ body {
     padding: 20px;
     text-align: center;
 }
+/* Center the container holding the button */
+.enroll-btn-container {
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center;     /* Centers vertically if needed */
+    background-color: var(--light-gray);
+    border-radius: 20px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 500px;
+}
+
+/* Ensure the button itself is centered inside */
+.enroll-btn {
+    display: block;
+    margin: 0 auto;
+}
+
 
 /* 3. DONATION BOX: White boxes preserved */
 .donation-box {
