@@ -1,47 +1,46 @@
 :root {
     --pink: #ffb6c1;
     --dreamy-pink: #ff85a2;
-    --light-gray: #fdfdfd;
 }
 
 body {
     background-color: var(--pink);
     margin: 0;
-    padding: 0;
-    position: relative;
+    padding: 0 20px; /* Forces text to stay in the middle, away from edges */
     min-height: 100vh;
-    overflow-x: hidden;
 }
 
-/* 1. LAYER: THE DOODLES (Pink Side) */
-/* Setting z-index: 1 and position: fixed keeps them on the background layer */
+/* 1. LAYER: THE DOODLES */
 .doodle {
-    position: fixed;
+    position: absolute;
     width: 45px;
     z-index: 1;
     pointer-events: none;
 }
 
-/* 2. LAYER: THE CONTENT (White Side) */
-/* Setting z-index: 10 forces the content boxes to sit ON TOP of any overlapping doodles */
-header, section, .enroll-btn, .donation-box, .logo-wrapper {
-    position: relative;
-    z-index: 10;
-    background-color: var(--light-gray);
-    margin: 20px;
-    padding: 20px;
-    border-radius: 20px;
-    border: 1px solid #ddd;
+/* 2. LAYER: TEXT CONTENT (No white background) */
+header, section {
+    background-color: transparent; /* Removes white box */
+    border: none;
+    margin: 20px 0;
+    padding: 10px;
+    color: #333;
 }
 
-/* Logo & Button Styling */
-.logo-wrapper { display: flex; justify-content: center; padding: 20px 0; }
-.center-logo { width: 180px; height: auto; }
+/* 3. LAYER: THE DONATION BOX (Keep the white box) */
+.donation-box {
+    background-color: #fdfdfd;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 20px 0;
+    border: 1px solid var(--dreamy-pink);
+}
 
+/* Keep the button as is */
 .enroll-btn {
     display: block;
     width: 150px;
-    margin: 0 auto 20px auto;
+    margin: 20px auto;
     padding: 10px;
     background-color: var(--dreamy-pink);
     color: white;
@@ -50,33 +49,3 @@ header, section, .enroll-btn, .donation-box, .logo-wrapper {
     text-decoration: none;
     font-weight: bold;
 }
-
-/* 3. SCATTERED POSITIONS */
-/* We use top/left percentages so they stay in the pink margins */
-.d1 { top: 5%; left: 5%; }
-.d2 { top: 5%; right: 5%; }
-.d3 { top: 15%; left: 2%; }
-.d4 { top: 15%; right: 2%; }
-.d5 { top: 25%; left: 8%; }
-.d6 { top: 25%; right: 8%; }
-.d7 { top: 35%; left: 3%; }
-.d8 { top: 35%; right: 3%; }
-.d9 { top: 45%; left: 6%; }
-.d10 { top: 45%; right: 6%; }
-.d11 { top: 55%; left: 2%; }
-.d12 { top: 55%; right: 2%; }
-.d13 { top: 65%; left: 9%; }
-.d14 { top: 65%; right: 9%; }
-.d15 { top: 75%; left: 4%; }
-.d16 { top: 75%; right: 4%; }
-.d17 { top: 85%; left: 1%; }
-.d18 { top: 85%; right: 1%; }
-.d19 { top: 95%; left: 12%; }
-.d20 { top: 95%; right: 12%; }
-.d21 { top: 50px; left: 15%; }
-.d22 { top: 50px; right: 15%; }
-.d23 { top: 150px; left: 5%; }
-.d24 { top: 150px; right: 5%; }
-.d25 { top: 250px; left: 10%; }
-.d26 { top: 250px; right: 10%; }
-.d27 { top: 350px; left: 5%; }
