@@ -6,52 +6,76 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: var(--text-color);
     background-color: var(--pink);
     margin: 0;
     padding: 0;
-    /* Removed position: relative and z-index to stop layout breaking */
+    position: relative;
+    /* Ensure the body is high enough to hold your content */
+    min-height: 100vh;
 }
 
-/* --- LOGO & HEADER --- */
-header {
-    background-color: var(--pink);
-    padding: 20px 0;
-    display: flex;
-    justify-content: center;
+/* --- FLOATING DOODLES --- */
+.doodle {
+    position: absolute; /* Pins them to the page */
+    width: 70px;        /* Consistent size */
+    z-index: 100;       /* Floats them IN FRONT of content */
+    pointer-events: none; /* Allows you to click buttons underneath */
 }
 
-.center-logo {
-    width: 250px; /* Adjusted size so it fits properly */
-    height: auto;
-    display: block;
-}
+/* --- MANUAL POSITIONING --- */
+/* Pin each doodle exactly where it belongs using top/left/right */
+/* Example placements based on your screenshot: */
 
-/* --- BUTTON --- */
-.enroll-btn {
-    display: block;
-    width: 200px;
-    margin: 20px auto;
-    padding: 15px;
-    background-color: var(--dreamy-pink);
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 50px;
-    font-weight: bold;
-}
+/* Top section area */
+.d1 { top: 20px; left: 10%; }
+.d2 { top: 50px; right: 5%; }
 
-/* --- SECTIONS --- */
-section {
+/* Overlapping the white sections (negative values hang off the edge) */
+.d3 { top: 450px; left: -25px; } 
+.d4 { top: 800px; right: -20px; }
+
+/* Continue adding .d5 { ... } through .d27 { ... } */
+
+/* --- CONTENT BOXES --- */
+header, section, .enroll-btn, .donation-box {
+    position: relative;
+    z-index: 50; /* Content stays BEHIND doodles (50 < 100) */
     background-color: var(--light-gray);
     border-radius: 30px;
-    padding: 30px;
     margin: 20px;
+    padding: 30px;
     border: 1px solid var(--pink);
 }
 
-/* --- REMOVED DOODLE CONTAINER --- */
-/* The previous container was breaking the page. 
-   Delete all code related to #doodle-container and .doodle 
-   to stop the layout issues shown in 1000418296.png. */
+header { 
+    background-color: var(--light-gray) !important;
+    display: flex; 
+    justify-content: center; 
+    padding: 20px 0;
+}
+
+.center-logo { 
+    width: 200px; 
+    height: auto; 
+    display: block; 
+}
+
+.enroll-btn {
+    display: block; 
+    width: 200px; 
+    margin: 30px auto; 
+    padding: 15px;
+    background-color: var(--dreamy-pink); 
+    color: white; 
+    text-align: center;
+    text-decoration: none; 
+    border-radius: 50px; 
+    font-weight: bold;
+}
+
+.donation-box {
+    text-align: center;
+    border: 2px dashed var(--pink);
+}
