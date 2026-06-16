@@ -6,31 +6,32 @@
     --text-color: #5a5a5a;
 }
 
-/* Center the Logo */
-.center-logo {
-    width: 150px;       /* Adjust size as needed */
-    height: auto;
-    display: block;
-    margin: 20px auto;  /* Centers the logo horizontally */
-}
-
-/* Header Styling */
-header {
-    text-align: center;
-    padding: 20px 0;
-}
-
-/* Body Styling - Now Baby Pink */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: var(--text-color);
-    background-color: var(--pink); /* Sets the page background to baby pink */
+    background-color: var(--pink);
     line-height: 1.6;
     margin: 0;
     padding: 0;
 }
 
-/* Other existing styles remain the same */
+header {
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* FIX: Ensure the link container behaves like a block to center the image */
+.logo-link {
+    display: inline-block; 
+}
+
+.center-logo {
+    width: 150px;
+    height: auto;
+    display: block; /* Centers the image if it's the only thing in the link */
+    margin: 0 auto; 
+}
+
 .enroll-btn {
     display: block;
     width: 200px;
@@ -53,7 +54,7 @@ body {
     padding: 20px;
     border-radius: 20px;
     text-align: center;
-    margin-top: 40px;
+    margin: 40px 20px; /* Adjusted margin for better mobile view */
     border: 2px dashed var(--pink);
 }
 
