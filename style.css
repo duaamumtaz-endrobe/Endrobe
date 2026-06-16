@@ -28,26 +28,31 @@ body {
     padding: 20px;
     text-align: center;
 }
-/* Center the container holding the button */
+
+/* 3. BUTTON CONTAINER: Centered, smaller, pill-shaped lavender box */
 .enroll-btn-container {
     display: flex;
-    justify-content: center; /* Centers horizontally */
-    align-items: center;     /* Centers vertically if needed */
+    justify-content: center;
     background-color: var(--light-gray);
-    border-radius: 20px;
-    padding: 20px;
+    border-radius: 50px;
+    padding: 10px 30px;
     margin: 20px auto;
-    max-width: 500px;
+    width: fit-content;
+    border: 1px solid #ddd;
 }
 
-/* Ensure the button itself is centered inside */
 .enroll-btn {
     display: block;
-    margin: 0 auto;
+    margin: 0;
+    padding: 10px 20px;
+    background-color: var(--dreamy-pink);
+    color: white;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
 }
 
-
-/* 3. DONATION BOX: White boxes preserved */
+/* 4. DONATION BOX: White box preserved */
 .donation-box {
     background-color: var(--light-gray);
     border-radius: 20px;
@@ -57,19 +62,10 @@ body {
     text-align: center;
 }
 
-/* Logo & Button Styling */
+/* Logo Styling */
 .center-logo { width: 180px; height: auto; }
-.enroll-btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: var(--dreamy-pink);
-    color: white;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: bold;
-}
 
-/* 4. SCATTERED COORDINATES: Kept in side margins only */
+/* 5. SCATTERED COORDINATES: Locked to side margins */
 /* Left side */
 .d1, .d3, .d5, .d7, .d9, .d11, .d13, .d15, .d17, .d19, .d21, .d23, .d25, .d27 { left: 2%; }
 /* Right side */
