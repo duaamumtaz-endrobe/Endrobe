@@ -7,59 +7,41 @@
 body {
     background-color: var(--pink);
     margin: 0;
+    padding: 0;
     position: relative;
     min-height: 100vh;
+    /* Important: Ensure body is the container for absolute elements */
 }
 
-/* Base Style */
+/* 1. LAYER: THE DOODLES (The Pink Side) */
 .doodle {
-    position: absolute;
-    width: 45px; 
-    z-index: 100;
-    pointer-events: none;
+    position: absolute;   /* Pin to page coordinates */
+    width: 45px;          /* Small sticker size */
+    z-index: 1;           /* Always in the back layer */
+    pointer-events: none; /* Let clicks pass through to content */
 }
 
-/* POSITIONS: Tweak these percentages/pixels to match your desired layout */
-.d1 { top: 20px; left: 5%; }
-.d2 { top: 20px; right: 5%; }
-.d3 { top: 150px; left: 10%; }
-.d4 { top: 150px; right: 10%; }
-.d5 { top: 300px; left: -10px; }
-.d6 { top: 300px; right: -10px; }
-.d7 { top: 450px; left: 5%; }
-.d8 { top: 450px; right: 5%; }
-.d9 { top: 600px; left: -15px; }
-.d10 { top: 600px; right: -15px; }
-.d11 { top: 750px; left: 15%; }
-.d12 { top: 750px; right: 15%; }
-.d13 { top: 900px; left: 5%; }
-.d14 { top: 900px; right: 5%; }
-.d15 { top: 1050px; left: -10px; }
-.d16 { top: 1050px; right: -10px; }
-.d17 { top: 1200px; left: 20%; }
-.d18 { top: 1200px; right: 20%; }
-.d19 { top: 1350px; left: 5%; }
-.d20 { top: 1350px; right: 5%; }
-.d21 { top: 1500px; left: -5px; }
-.d22 { top: 1500px; right: -5px; }
-.d23 { top: 1650px; left: 15%; }
-.d24 { top: 1650px; right: 15%; }
-.d25 { top: 1800px; left: 10%; }
-.d26 { top: 1800px; right: 10%; }
-.d27 { top: 1950px; left: 5%; }
-
-/* Centered Logo & Content */
-.logo-wrapper { display: flex; justify-content: center; padding: 20px 0; }
-.center-logo { width: 180px; height: auto; }
-
-header, section, .enroll-btn, .donation-box {
+/* 2. LAYER: THE CONTENT (The White Side) */
+header, section, .enroll-btn, .donation-box, .logo-wrapper {
     position: relative;
-    z-index: 50;
+    z-index: 10;          /* Higher than doodles (10 > 1) */
     background-color: var(--light-gray);
     margin: 20px;
     padding: 20px;
     border-radius: 20px;
     border: 1px solid var(--pink);
+}
+
+/* Logo specific formatting */
+.logo-wrapper {
+    display: flex; 
+    justify-content: center; 
+    padding: 20px 0;
+}
+
+.center-logo {
+    width: 180px; 
+    height: auto;
 }
 
 .enroll-btn {
@@ -74,3 +56,32 @@ header, section, .enroll-btn, .donation-box {
     text-decoration: none;
     font-weight: bold;
 }
+
+/* 3. PINNED POSITIONS FOR ALL 27 DOODLES */
+.d1 { top: 30px; left: 5%; }
+.d2 { top: 30px; right: 5%; }
+.d3 { top: 180px; left: 8%; }
+.d4 { top: 180px; right: 8%; }
+.d5 { top: 350px; left: 2%; }
+.d6 { top: 350px; right: 2%; }
+.d7 { top: 500px; left: 6%; }
+.d8 { top: 500px; right: 6%; }
+.d9 { top: 650px; left: 1%; }
+.d10 { top: 650px; right: 1%; }
+.d11 { top: 800px; left: 12%; }
+.d12 { top: 800px; right: 12%; }
+.d13 { top: 950px; left: 4%; }
+.d14 { top: 950px; right: 4%; }
+.d15 { top: 1100px; left: 0%; }
+.d16 { top: 1100px; right: 0%; }
+.d17 { top: 1250px; left: 15%; }
+.d18 { top: 1250px; right: 15%; }
+.d19 { top: 1400px; left: 3%; }
+.d20 { top: 1400px; right: 3%; }
+.d21 { top: 1550px; left: 1%; }
+.d22 { top: 1550px; right: 1%; }
+.d23 { top: 1700px; left: 10%; }
+.d24 { top: 1700px; right: 10%; }
+.d25 { top: 1850px; left: 5%; }
+.d26 { top: 1850px; right: 5%; }
+.d27 { top: 2000px; left: 10%; }
