@@ -13,6 +13,8 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
+    position: relative;
+    z-index: 1;
 }
 
 /* --- LOGO & BUTTON --- */
@@ -24,21 +26,26 @@ body {
     background-color: var(--dreamy-pink); color: white; text-align: center;
     text-decoration: none; border-radius: 50px; font-weight: bold;
     box-shadow: 0 4px 10px rgba(255, 133, 162, 0.3); transition: transform 0.2s;
+    position: relative;
+    z-index: 3;
 }
 .enroll-btn:hover { transform: scale(1.05); }
 
 /* --- SCATTERED DOODLE CONTAINER --- */
 #doodle-container {
-    position: relative; /* This defines the area for scattering */
-    width: 100%;
-    overflow: hidden;   /* Keeps doodles from causing scroll bars */
-    pointer-events: none; /* Allows clicks to pass through to buttons below */
-    z-index: 1;
+    position: fixed;    /* Fixes to the full browser window */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none; /* Passes clicks through to content below */
+    z-index: -1;          /* Pushes doodles behind all content */
+    overflow: hidden;
 }
 
 .doodle {
-    position: absolute; /* Essential for JS-based random placement */
-    width: 60px;        /* Consistent small size */
+    position: absolute;   /* Necessary for JS to move them */
+    width: 50px;          /* Adjusted for a better scattered look */
     transition: all 0.5s ease;
     cursor: pointer;
 }
@@ -49,14 +56,19 @@ body {
 }
 
 /* --- SECTIONS --- */
-section { 
+header, section, .donation-box {
+    position: relative;
+    z-index: 2; /* Keeps content layered above the background doodles */
     background-color: var(--light-gray);
+}
+
+header { background-color: var(--pink) !important; }
+
+section { 
     border-radius: 30px;
     padding: 40px;
     margin: 20px;
     border: 1px solid var(--pink);
-    position: relative;
-    z-index: 2; /* Keeps text above scattered doodles */
 }
 
 .donation-box {
