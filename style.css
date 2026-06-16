@@ -27,26 +27,26 @@ body {
 }
 .enroll-btn:hover { transform: scale(1.05); }
 
-/* --- DOODLE GRID (NEW) --- */
-.doodle-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 12px;
-    margin: 20px 0;
-    padding: 15px;
-    background: var(--soft-lavender);
-    border-radius: 20px;
-    border: 2px dashed var(--dreamy-pink);
+/* --- SCATTERED DOODLE CONTAINER --- */
+#doodle-container {
+    position: relative; /* This defines the area for scattering */
+    width: 100%;
+    overflow: hidden;   /* Keeps doodles from causing scroll bars */
+    pointer-events: none; /* Allows clicks to pass through to buttons below */
+    z-index: 1;
 }
 
 .doodle {
-    width: 45px;
-    height: 45px;
-    object-fit: contain;
-    transition: transform 0.3s ease;
+    position: absolute; /* Essential for JS-based random placement */
+    width: 60px;        /* Consistent small size */
+    transition: all 0.5s ease;
+    cursor: pointer;
 }
-.doodle:hover { transform: scale(1.3) rotate(10deg); }
+
+.doodle:hover {
+    transform: scale(1.3) rotate(0deg) !important;
+    z-index: 10;
+}
 
 /* --- SECTIONS --- */
 section { 
@@ -55,4 +55,15 @@ section {
     padding: 40px;
     margin: 20px;
     border: 1px solid var(--pink);
+    position: relative;
+    z-index: 2; /* Keeps text above scattered doodles */
+}
+
+.donation-box {
+    background: var(--soft-lavender);
+    padding: 20px;
+    border-radius: 20px;
+    text-align: center;
+    margin: 40px 20px;
+    border: 2px dashed var(--pink);
 }
