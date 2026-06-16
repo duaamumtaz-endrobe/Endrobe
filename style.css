@@ -2,57 +2,63 @@
     --pink: #ffb6c1;
     --dreamy-pink: #ff85a2;
     --light-gray: #fdfdfd;
+    --text-color: #5a5a5a;
 }
 
 body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
     background-color: var(--pink);
     margin: 0;
+    padding: 0;
     position: relative;
-    min-height: 100vh;
+    overflow-x: hidden; /* Prevents doodles from causing scrollbars */
 }
 
+/* --- SMALLER STICKER DOODLES --- */
 .doodle {
     position: absolute;
-    width: 70px;
-    z-index: 100; /* Always in front */
+    width: 40px;          /* REDUCED SIZE: Much smaller, like stickers */
+    z-index: 100;
     pointer-events: none;
 }
 
-/* --- THE 27 STICKY POSITIONS --- */
-.d1 { top: 20px; left: 5%; }
-.d2 { top: 50px; right: 10%; }
-.d3 { top: 350px; left: -20px; } /* Overlaps left side */
-.d4 { top: 400px; right: -15px; } /* Overlaps right side */
-.d5 { top: 700px; left: 10%; }
-.d6 { top: 850px; right: 5%; }
-.d7 { top: 950px; left: -25px; }
-.d8 { top: 1100px; right: -20px; }
-.d9 { top: 1250px; left: 15%; }
-.d10 { top: 1400px; right: 10%; }
-.d11 { top: 1550px; left: -20px; }
-.d12 { top: 1700px; right: -25px; }
-.d13 { top: 1850px; left: 5%; }
-.d14 { top: 2000px; right: 15%; }
-.d15 { top: 2150px; left: -15px; }
-.d16 { top: 2300px; right: -20px; }
-.d17 { top: 2450px; left: 20%; }
-.d18 { top: 2600px; right: 5%; }
-.d19 { top: 2750px; left: -20px; }
-.d20 { top: 2900px; right: -25px; }
-.d21 { top: 3050px; left: 10%; }
-.d22 { top: 3200px; right: 15%; }
-.d23 { top: 3350px; left: -10px; }
-.d24 { top: 3500px; right: -20px; }
-.d25 { top: 3650px; left: 5%; }
-.d26 { top: 3800px; right: 10%; }
-.d27 { top: 3950px; left: -20px; }
+/* --- PRECISE STICKER POSITIONS --- */
+/* These are now small and tightly placed near elements */
+.d1 { top: 120px; left: 15px; }      /* Top left near logo area */
+.d2 { top: 110px; right: 20px; }     /* Top right */
+.d3 { top: 430px; left: -10px; }     /* Overlapping side of Story box */
+.d4 { top: 850px; right: -10px; }    /* Overlapping side of Journey box */
 
-/* --- CONTENT --- */
-header, section, .enroll-btn, .donation-box {
+/* --- MAIN CONTENT --- */
+/* Keeping everything clean and centered */
+header, section, .donation-box {
     position: relative;
-    z-index: 50; /* Content sits behind the doodles */
-    background: var(--light-gray);
-    padding: 20px;
+    z-index: 50;
+    background-color: var(--light-gray);
     margin: 20px;
+    padding: 25px;
     border-radius: 20px;
+}
+
+header { 
+    background-color: var(--light-gray); 
+    display: flex; 
+    justify-content: center; 
+    padding: 20px 0;
+}
+
+.center-logo { width: 180px; }
+
+.enroll-btn {
+    display: block;
+    width: 160px;
+    margin: 0 auto 20px auto;
+    padding: 10px;
+    background-color: var(--dreamy-pink);
+    color: white;
+    text-align: center;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9em;
 }
